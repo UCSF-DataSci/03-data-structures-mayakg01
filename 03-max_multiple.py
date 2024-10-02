@@ -42,9 +42,21 @@ def find_greatest_product(number_string, adjacent_digits=13):
     max_product = 0
     
     # Your code here
+    for i in range(len(THOUSAND_DIGIT_NUMBER)):
+       number_string = THOUSAND_DIGIT_NUMBER[i:adjacent_digits + i]
+       product = 1
+       for i in range(len(number_string)):
+           product = product * int(number_string[i])
+       
+       if product > max_product :
+           max_product = product
 
+    
     return max_product
 
 if __name__ == "__main__":
     result = find_greatest_product(THOUSAND_DIGIT_NUMBER)
     print(f"The greatest product of 13 adjacent digits is: {result}")
+
+
+
